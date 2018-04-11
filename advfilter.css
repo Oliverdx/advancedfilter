@@ -1,0 +1,324 @@
+#filter-content {
+    display: grid;
+    grid-template-columns: 470px 470px;
+    grid-gap: 30px;
+    width: 1024px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#filter-content.nothingfound {
+    display: block;
+    text-align: center;
+}
+
+#box-advfilter {
+    position: absolute;
+    width: 100%;
+    background: #ebebeb;
+    height: 170px;
+    display: none;
+    grid-template-columns: 226px 382px;
+    align-items: center;
+    justify-content: center;
+    z-index:10;
+}
+
+#box-advfilter.showAdvanced{
+    display:grid!important;
+}
+
+.filter-close {
+    display: none;
+}
+
+#box-advfilter > div {
+    display: grid;
+    grid-template-areas: "a a" "b b";
+    grid-template-rows: repeat(5, 24px);
+    grid-template-columns: auto auto;
+    column-count: 2;
+}
+
+#box-advfilter h5 {
+    grid-area: a;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#box-advfilter label {
+    font-size: 13px;
+}
+
+#box-advfilter input {
+    margin-right: 5px;
+}
+
+.single-element a,
+.single-element img{
+    height: 278px;
+    width: 100%;
+    position:relative;
+    display:inline-block;
+}
+
+.single-element img {    
+    border: 2px solid #ccc;
+}
+
+.single-element a:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(../img/playbtn.svg) no-repeat center / 90px;
+    transition: ease all 300ms;
+    z-index:9;
+}
+
+.single-element a:hover:before {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.single-element h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 17px;
+}
+
+.single-element .duration {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #FFF;
+    z-index: 9;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.filter input[type="text"] {
+    background: url(../img/search.svg) no-repeat 97% 15px / 22px;
+}
+
+.adv-filter-btn {
+    margin: 0 15px;
+    padding-top: 13px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.adv-filter-btn:after {
+    content: "+";
+    margin: 5px;
+}
+
+.adv-filter-btn.showAdvanced:after{
+    content: "-";
+}
+
+@media (max-width: 1019px){
+    .adv-filter-btn {
+        line-height: 20px;
+        padding-top: 8px;
+    }
+
+    #filter-content {
+        width: 577px;
+        grid-template-columns: 100%;
+    }
+
+    .filter {
+        margin: 38px auto 56px;
+    }
+
+    .single-element a, .single-element img {
+        height: calc(577px * 0.563);
+    }
+
+}
+
+@media (max-width: 767px){
+
+    .single-element,
+    .single-element a,
+    .single-element img {
+        width: 100%;
+        height: auto;
+    }
+    
+    #filter-content {
+        grid-template-columns: 100%;
+        width: 85%;
+    }
+
+        
+    .filter {
+        flex-direction: column;
+        padding: 0 28px;
+    }
+    
+    .filter, .filter input[type="text"], .sortby {
+        width: 100%;
+    }
+
+    .filter input[type="text"] {
+        padding: 0 15px;
+    }
+    
+    .adv-filter-btn {
+        text-align: center;
+        margin: 26px 0 0;
+        padding: 0;
+    }
+    
+    #box-advfilter {
+        padding: 42px 28px;
+        height: auto;
+        grid-template-columns: 100%;
+        position: fixed;
+        display: block!important;
+        top: 0;
+        right: -50%;
+        z-index: 15;
+        width: 50%;
+        height: 100%;
+        padding: 50px 0;
+        transition: ease all 600ms;
+    }
+
+    #box-advfilter.showAdvanced {
+        display: block!important;
+        right:0;
+    }
+
+    #box-advfilter > div {
+        display: block;
+        column-count: 1;
+        height: 40px;
+        overflow: hidden;
+        transition: ease all 600ms;
+        background: #f3f3f3;
+    }
+
+    .filter-close {
+        display: block;
+    }
+    
+    #box-advfilter h5 {
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+        border-bottom: 1px solid #ccc;
+        padding: 0 20px;
+        margin-bottom: 15px;
+        background: #ebebeb;
+        position:relative;
+    }
+
+    #box-advfilter label {
+        display: block;
+        width: 100%;
+        padding: 5px 25px;
+    }
+
+    #box-advfilter > div.openfilter {
+        height: 300px;
+    }
+
+    .sortby {
+        padding: 0;
+        width: 300px;
+    }
+
+    .site-overlay.showfilter {
+        z-index: 14;
+    }
+    
+    .filter-close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    #box-advfilter h5:before, #box-advfilter h5:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background: #000;
+        width: 10px;
+        height: 2px;
+        top: 16px;
+        right: 16px;
+        transform: rotate(45deg);
+        transition:ease all 600ms;
+    }
+    
+    #box-advfilter h5:before {
+        right: 10px;
+        transform: rotate(-45deg);
+    }
+    
+    #box-advfilter .openfilter h5:after {
+        transform: rotate(-45deg);
+    }
+    
+    #box-advfilter .openfilter h5:before {
+        transform: rotate(45deg);
+    }
+
+}
+
+@media (max-width: 479px){
+    
+    .filter {
+        margin: 0;
+    }
+
+    .filter input[type="text"] {
+        height: 40px;
+        background-size: 18px;
+        background-position: 97% 10px;
+    }
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+        border: 1px solid #009482;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background: #FFF;
+    }
+    
+    input[type="radio"]:checked {
+        background: #009482;
+    }
+
+    #box-advfilter {
+        width: 200px;
+        right: -200px;
+        padding: 50px 0 0;
+    }
+    
+    #box-advfilter > div {
+        height: 35px;
+    }
+    
+    #box-advfilter h5 {
+        font-size: 14px;
+        height: 35px;
+        line-height: 35px;
+        margin-bottom: 10px;
+    }
+    
+    #box-advfilter label {
+        padding: 0 10px;
+        margin: 10px 0;
+    }
+}
