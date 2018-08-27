@@ -1,57 +1,57 @@
 <div id="filter-wrapper">
     <div class="filter">
-        <input type="text" id="filterinput" onkeyup="filterElements()" placeholder="Start type to search...">
+        <input type="text" id="filterinput" onkeyup="filterElements()" placeholder="Start typing to filter photos...">
         <span class="adv-filter-btn">Advanced Filters</span>
     </div>
 
     <div id="box-advfilter">
-    <span class="filter-close">X</span>
-        <div class="filter-type">
-            <h5>Type</h5>                            
-            <label><input type="radio" name="type" value="" >All</label>
-            <label><input type="radio" name="type" value="type1" >Type 1</label>
-            <label><input type="radio" name="type" value="type2" >Type 2</label>
-            <label><input type="radio" name="type" value="type3" >Type 3</label>
-            <label><input type="radio" name="type" value="type4" >Type 4</label>
-            <label><input type="radio" name="type" value="type5" >Type 5</label>
+        <span class="filter-close">X</span>
+        <div class="filter-age openfilter">
+            <h5>Age</h5>                            
+            <label><input type="radio" name="age" value="" >All</label>
+            <label><input type="radio" name="age" value="under50" >Under 50</label>
+            <label><input type="radio" name="age" value="over50" >Over 50</label>
+        </div>
+
+        <div class="filter-gender">
+            <h5>Gender</h5>                            
+            <label><input type="radio" name="gender" value="" >All</label>
+            <label><input type="radio" name="gender" value="female" >Female</label>
+            <label><input type="radio" name="gender" value="male" >Male</label>
         </div>
         
-        <div class="filter-provider">
-            <h5>Provider</h5>
-            <label><input type="radio" name="provider" value="" >All</label>
-            <label><input type="radio" name="provider" value="provider1" >Provider 1</label>
-            <label><input type="radio" name="provider" value="provider2" >Provider 2</label>
-            <label><input type="radio" name="provider" value="provider3" >Provider 3</label>
-            <label><input type="radio" name="provider" value="provider4" >Provider 4</label>
-            <label><input type="radio" name="provider" value="provider5" >Provider 5</label>
-            <label><input type="radio" name="provider" value="provider6" >Provider 6</label>
+        <div class="filter-type">
+            <h5>Type</h5>
+            <label><input type="radio" name="type" value="" >All</label>
+            <label><input type="radio" name="type" value="injectables" >Injectables</label>
+            <label><input type="radio" name="type" value="laser" >Laser</label>
+            <label><input type="radio" name="type" value="bodysculpting" >Body Sculpting</label>
+            <label><input type="radio" name="type" value="veins" >Vein</label>
+            <label><input type="radio" name="type" value="aesthetics" >Aesthetics</label>
         </div>
-
     </div>
-
-</div>  <!-- #Filter Wrapper -->
+</div><!-- #Filter Wrapper -->
 
 <div id="filter-content">
 
-        <div class="single-element type provider">
-            <h3>Element 1</h3>
-        </div>
+    <div class="single-element type provider" >
+        <span class="filter-search-terms" style="display:none;"> #TERMS HERE</span>  
+    </div>
 
-        <div class="single-element type provider">
-            <h3>Element 2</h3>
-        </div>
+    <div class="single-element type provider" >
+        <span class="filter-search-terms" style="display:none;"> #TERMS HERE</span>  
+    </div>
 
-        <div class="single-element type provider">
-            <h3>Element 3</h3>
-        </div>
+    <div class="single-element type provider" >
+        <span class="filter-search-terms" style="display:none;"> #TERMS HERE</span>  
+    </div>
 
-        <div class="single-element type provider">
-            <h3>Element 4</h3>
-        </div>
+    <div class="single-element type provider" >
+        <span class="filter-search-terms" style="display:none;"> #TERMS HERE</span>  
+    </div>
 
-        <div class="single-element type provider">
-            <h3>Element 5</h3>
-        </div>
-
+    <div class="single-element type provider" >
+        <span class="filter-search-terms" style="display:none;"> #TERMS HERE</span>  
+    </div>
 
 </div><!-- #filter-content -->
