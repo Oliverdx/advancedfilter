@@ -106,9 +106,12 @@ function filterElements() {
 var placeholder;
 
 $('#filterinput').focusin(function () {
-    $(this).parent().addClass('active');
     placeholder = $(this).attr('placeholder');
     $(this).attr('placeholder', "");
+});
+
+$('#filterinput').on('keydown', function () {
+    $(this).parent().addClass('active');
 });
 
 $('#filterinput').focusout(function () {
