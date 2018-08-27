@@ -100,3 +100,18 @@ function filterElements() {
     }
 
 } //End FilterProcedures
+
+// Placeholder and magnifier animation
+
+var placeholder;
+
+$('#filterinput').focusin(function () {
+    $(this).parent().addClass('active');
+    placeholder = $(this).attr('placeholder');
+    $(this).attr('placeholder', "");
+});
+
+$('#filterinput').focusout(function () {
+    $(this).parent().removeClass('active');
+    $(this).attr('placeholder', placeholder);
+});

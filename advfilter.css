@@ -97,10 +97,6 @@
     text-shadow: 1px 1px 1px #000;
 }
 
-.filter input[type="text"] {
-    background: url(../img/search.svg) no-repeat 97% 15px / 22px;
-}
-
 .adv-filter-btn {
     margin: 0 15px;
     padding-top: 13px;
@@ -115,6 +111,46 @@
 
 .adv-filter-btn.showAdvanced:after{
     content: "-";
+}
+
+/* Animation magnify glass */
+
+.filter:before,
+.filter:after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.filter:before {
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    border: 3px solid #9e9e9f;
+    top: 15px;
+    left: 66%;
+}
+.filter:after{
+    width:5px;
+    height: 11px;
+    background: #9e9e9f;
+    border-radius: 5px;
+    top: 27px;
+    left: 69%;
+    transform: rotate(135deg);
+    transition: ease all 300ms;
+}
+
+.filter.active:before{
+    top: 17px;
+    width: 15px;
+    height: 15px;
+    border: 3px dotted;
+    animation: searching 2s infinite;
+}
+
+.filter.active:after{
+    opacity: 0;
 }
 
 @media (max-width: 1019px){
